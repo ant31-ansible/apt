@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  author: Antoine Legrand
+  description: Simple APT role
+  license: MIT
+  min_ansible_version: 1.9
+  categories:
+  - system
+dependencies: []

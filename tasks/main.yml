@@ -1,0 +1,22 @@
+---
+- name: APT | Install PPA packages
+  apt: name={{item}} state=latest update_cache={{apt_update}} cache_valid_time=3600
+  when: apt.ppa is defined
+  with_items:
+    - python-software-properties
+    - software-properties-common
+  tags:
+    - apt
+
+- name: APT | Add repositories
+  apt_repository: repo={{item}}
+  with_items: apt.ppa
+  when: apt.ppa is defined
+  tags:
+    - apt
+
+- name: APT | Install packages list
+  apt: name={{item}} state=latest update_cache={{apt_update}} cache_valid_time=3600
+  with_items: apt.packages
+  tags:
+    - apt
