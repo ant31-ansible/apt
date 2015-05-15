@@ -6,7 +6,10 @@ Install a list of packages. optionaly add PPA before
 Requirements
 ------------
 
+ - None
+
 Role Variables
+---------------
 
 ```yaml
 ---
@@ -27,6 +30,7 @@ Dependencies
 Example Playbook
 ----------------
 
+```yaml
 ---
 - hosts: webapp
   vars:
@@ -36,6 +40,7 @@ Example Playbook
         packages:
           - webapp
           - proxy
+```
 
 License
 -------
